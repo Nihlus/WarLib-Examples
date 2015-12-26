@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPConverter", "BLPConverter\BLPConverter.csproj", "{3295958B-ED25-4B40-9A60-7BF69A2C3A14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarLib", "..\CodeSync\WarLib\WarLib\WarLib.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPViewer", "BLPViewer\BLPViewer.csproj", "{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPQExplorer", "MPQExplorer\MPQExplorer.csproj", "{BD058763-D407-47D0-89EC-8B743D13FA68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.ActiveCfg = Debug|x86
+		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.Build.0 = Debug|x86
+		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Release|x86.ActiveCfg = Release|x86
+		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Release|x86.Build.0 = Release|x86
+		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Debug|x86.ActiveCfg = Debug|x86
+		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Debug|x86.Build.0 = Debug|x86
+		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Release|x86.ActiveCfg = Release|x86
+		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Release|x86.Build.0 = Release|x86
+		{BD058763-D407-47D0-89EC-8B743D13FA68}.Debug|x86.ActiveCfg = Debug|x86
+		{BD058763-D407-47D0-89EC-8B743D13FA68}.Debug|x86.Build.0 = Debug|x86
+		{BD058763-D407-47D0-89EC-8B743D13FA68}.Release|x86.ActiveCfg = Release|x86
+		{BD058763-D407-47D0-89EC-8B743D13FA68}.Release|x86.Build.0 = Release|x86
+		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
