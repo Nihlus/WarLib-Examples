@@ -238,6 +238,7 @@
                 <property name="margin_right">4</property>
                 <property name="margin_top">4</property>
                 <property name="model">ArchiveTreeStore</property>
+                <property name="headers_clickable">False</property>
                 <property name="search_column">1</property>
                 <property name="rubber_banding">True</property>
                 <property name="enable_tree_lines">True</property>
