@@ -42,6 +42,8 @@ public partial class MainWindow: Gtk.Window
 
 		OpenArchiveButton.Clicked += OnOpenArchiveButtonClicked;
 		ArchiveTreeView.RowExpanded += OnArchiveRowExpanded;
+		ArchiveTreeView.PopupMenu += OnArchivePopupMenuActivated;
+		ArchiveTreeView.ButtonPressEvent += OnArchiveTreeClicked;
 	}
 
 	protected void OnOpenArchiveButtonClicked(object sender, EventArgs e)
@@ -66,7 +68,10 @@ public partial class MainWindow: Gtk.Window
 				if (currentMPQ != null)
 				{
 					currentMPQ.Dispose();
-					currentFileStream.Close();
+				}
+
+				if (currentFileStream != null)
+				{
 					currentFileStream.Dispose();
 				}
 
@@ -108,6 +113,20 @@ public partial class MainWindow: Gtk.Window
 			{
 				EnumerateDirectories(folderPath + folder);
 			}
+		}
+	}
+
+	protected void OnArchivePopupMenuActivated(object sender, PopupMenuArgs e)
+	{
+
+	}
+
+	protected void OnArchiveTreeClicked(object sender, ButtonPressEventArgs e)
+	{
+		Console.WriteLine("Rightclick in tree: ");
+		if (e.Event.Type == Gdk.EventType.ButtonPress && e.Event.Button == 3)
+		{
+			Console.WriteLine("Rightclick in tree: ");
 		}
 	}
 
@@ -288,6 +307,16 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnDeleteEvent(object sender, DeleteEventArgs a)
 	{
+		if (currentMPQ != null)
+		{
+			currentMPQ.Dispose();
+		}
+
+		if (currentFileStream != null)
+		{
+			currentFileStream.Dispose();
+		}
+
 		Application.Quit();
 		a.RetVal = true;
 	}
