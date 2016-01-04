@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPConverter", "BLPConverter\BLPConverter.csproj", "{3295958B-ED25-4B40-9A60-7BF69A2C3A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarLib", "..\CodeSync\WarLib\WarLib\WarLib.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPViewer", "BLPViewer\BLPViewer.csproj", "{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPQExplorer", "MPQExplorer\MPQExplorer.csproj", "{BD058763-D407-47D0-89EC-8B743D13FA68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarLib", "..\WarLib\WarLib\WarLib.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

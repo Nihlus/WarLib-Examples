@@ -44,7 +44,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CodeSync\WarLib\WarLib\WarLib.csproj">
+    <ProjectReference Include="..\..\WarLib\WarLib\WarLib.csproj">
       <Project>{DA06A44E-A67B-46C7-B07D-E90AEBED0502}</Project>
       <Name>WarLib</Name>
     </ProjectReference>
