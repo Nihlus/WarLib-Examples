@@ -32,7 +32,10 @@ public partial class MainWindow: Gtk.Window
 	[UI] Label ResolutionStatusLabel;
 	[UI] Label CompressionStatusLabel;
 
+	[UI] ImageMenuItem AboutMenuButton;
+
 	[UI] ColorSelectionDialog BackgroundColourChooserDialog;
+	[UI] AboutDialog MainAboutDialog;
 
 	String currentFilePath;
 	BLP currentFile;
@@ -66,6 +69,8 @@ public partial class MainWindow: Gtk.Window
 
 		ZoomInButton.Clicked += OnZoomInButtonClicked;
 		ZoomOutButton.Clicked += OnZoomOutButtonClicked;
+
+		AboutMenuButton.Activated += OnAboutButtonSelected;
 		// Button Setup End //
 
 		// Image Setup Start //
@@ -376,6 +381,13 @@ public partial class MainWindow: Gtk.Window
 				CurrentImage.Pixbuf = originalPixbuf;
 			}
 		}
+	}
+
+	protected void OnAboutButtonSelected(object sender, EventArgs e)
+	{
+		MainAboutDialog.Run();
+
+		MainAboutDialog.Hide();
 	}
 
 	private static ImageFormat GetImageFormat(string fileName)

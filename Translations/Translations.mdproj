@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>TranslationProject</ItemType>
+    <ProjectGuid>{1953DE8E-9EE1-4071-AD30-02F94994DB1C}</ProjectGuid>
+    <packageName>i8n1</packageName>
+    <outputType>RelativeToOutput</outputType>
+    <relPath>locale</relPath>
+  </PropertyGroup>
+</Project>
