@@ -127,7 +127,7 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	protected void OnItemExtract(object sender, EventArgs e)
-	{
+	{		
 		FileChooserDialog fsDialog = new FileChooserDialog(
 			                             "Save file",
 			                             this, 
@@ -147,7 +147,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnItemOpen(object sender, EventArgs e)
 	{
-		
+			
 	}
 
 	protected void OnItemCopyPath(object sender, EventArgs e)
@@ -168,8 +168,20 @@ public partial class MainWindow: Gtk.Window
 		currentPath = GetFilePathFromIter(iter);
 
 		if (e.Event.Type == Gdk.EventType.ButtonPress && e.Event.Button == 3)
-		{
+		{			
 			Console.WriteLine("Rightclick in tree: ");
+
+			if (!IsFile(currentPath))
+			{
+				ExtractItem.Sensitive = false;
+				OpenItem.Sensitive = false;
+			}
+			else
+			{
+				ExtractItem.Sensitive = true;
+				OpenItem.Sensitive = true;
+			}
+
 			FileContextMenu.ShowAll();
 			FileContextMenu.Popup();
 		}
