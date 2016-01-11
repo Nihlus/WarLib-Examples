@@ -8,5 +8,10 @@
     <packageName>i8n1</packageName>
     <outputType>RelativeToOutput</outputType>
     <relPath>locale</relPath>
+    <translations>
+      <translations>
+        <Translation isoCode="sv" />
+      </translations>
+    </translations>
   </PropertyGroup>
 </Project>

@@ -9,12 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPQExplorer", "MPQExplorer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarLib", "..\WarLib\WarLib\WarLib.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
 EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Translations", "Translations\Translations.mdproj", "{1953DE8E-9EE1-4071-AD30-02F94994DB1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Release|x86.Build.0 = Release|Any CPU
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.ActiveCfg = Debug|x86
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.Build.0 = Debug|x86
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Release|x86.ActiveCfg = Release|x86

@@ -17,6 +17,12 @@ public partial class MainWindow: Gtk.Window
 	[UI] TreeStore ArchiveTreeStore;
 	[UI] TreeView ArchiveTreeView;
 
+	[UI] Menu FileContextMenu;
+
+	[UI] ImageMenuItem ExtractItem;
+	[UI] ImageMenuItem OpenItem;
+	[UI] ImageMenuItem CopyPathItem;
+
 	Stream currentFileStream = null;
 	MPQ currentMPQ = null;
 
@@ -25,6 +31,7 @@ public partial class MainWindow: Gtk.Window
 	private Dictionary<string, TreeIter> folderNodeDictionary = new Dictionary<string, TreeIter>();
 
 	List<string> listFile;
+	string currentPath;
 
 	public static MainWindow Create()
 	{
@@ -42,8 +49,11 @@ public partial class MainWindow: Gtk.Window
 
 		OpenArchiveButton.Clicked += OnOpenArchiveButtonClicked;
 		ArchiveTreeView.RowExpanded += OnArchiveRowExpanded;
-		ArchiveTreeView.PopupMenu += OnArchivePopupMenuActivated;
 		ArchiveTreeView.ButtonPressEvent += OnArchiveTreeClicked;
+
+		ExtractItem.Activated += OnItemExtract;
+		OpenItem.Activated += OnItemOpen;
+		CopyPathItem.Activated += OnItemCopyPath;
 	}
 
 	protected void OnOpenArchiveButtonClicked(object sender, EventArgs e)
@@ -116,17 +126,52 @@ public partial class MainWindow: Gtk.Window
 		}
 	}
 
-	protected void OnArchivePopupMenuActivated(object sender, PopupMenuArgs e)
+	protected void OnItemExtract(object sender, EventArgs e)
 	{
+		FileChooserDialog fsDialog = new FileChooserDialog(
+			                             "Save file",
+			                             this, 
+			                             FileChooserAction.Save, 
+			                             "Cancel", ResponseType.Cancel,
+			                             "Save", ResponseType.Accept);
 
+		fsDialog.SetFilename(System.IO.Path.GetFileName(currentPath));
+
+		if (fsDialog.Run() == (int)ResponseType.Accept)
+		{
+			File.WriteAllBytes(fsDialog.Filename, currentMPQ.ExtractFile(currentPath));
+		}
+
+		fsDialog.Destroy();
 	}
 
+	protected void OnItemOpen(object sender, EventArgs e)
+	{
+		
+	}
+
+	protected void OnItemCopyPath(object sender, EventArgs e)
+	{
+		Clipboard clipboard = Clipboard.Get(Gdk.Atom.Intern("CLIPBOARD", false));
+		clipboard.Text = currentPath;
+	}
+
+	[GLib.ConnectBefore]
 	protected void OnArchiveTreeClicked(object sender, ButtonPressEventArgs e)
 	{
-		Console.WriteLine("Rightclick in tree: ");
+		TreePath path;
+		ArchiveTreeView.GetPathAtPos((int)e.Event.X, (int)e.Event.Y, out path);
+
+		TreeIter iter;
+		ArchiveTreeStore.GetIterFromString(out iter, path.ToString());
+
+		currentPath = GetFilePathFromIter(iter);
+
 		if (e.Event.Type == Gdk.EventType.ButtonPress && e.Event.Button == 3)
 		{
 			Console.WriteLine("Rightclick in tree: ");
+			FileContextMenu.ShowAll();
+			FileContextMenu.Popup();
 		}
 	}
 
@@ -174,7 +219,7 @@ public partial class MainWindow: Gtk.Window
 					int slashIndex = strippedPath.IndexOf('\\');
 					string topDirectory = strippedPath.Substring(0, slashIndex + 1);
 
-					if (!String.IsNullOrEmpty(topDirectory) && !topLevelDirectories.Contains(topDirectory))
+					if (!String.IsNullOrEmpty(topDirectory) && !topLevelDirectories.Contains(topDirectory) && !folderNodeDictionary.ContainsKey(parent + topDirectory))
 					{
 						topLevelDirectories.Add(topDirectory);
 						folderNodeDictionary.Add(parent + topDirectory, AddDirectoryNode(parent, topDirectory));
@@ -195,12 +240,18 @@ public partial class MainWindow: Gtk.Window
 
 			if (topLevelDirectories.Count > 0)
 			{
-				folderDictionary.Add(parent, topLevelDirectories);
+				if (!folderDictionary.ContainsKey(parent))
+				{
+					folderDictionary.Add(parent, topLevelDirectories);
+				}
 			}
 
 			if (folderFileContent.Count > 0)
 			{
-				folderContentDictionary.Add(parent, folderFileContent);
+				if (!folderContentDictionary.ContainsKey(parent))
+				{
+					folderContentDictionary.Add(parent, folderFileContent);
+				}
 			}
 		}
 		else
@@ -295,11 +346,17 @@ public partial class MainWindow: Gtk.Window
 		ArchiveTreeStore.IterParent(out parentIter, iter);
 		if (ArchiveTreeStore.IterIsValid(parentIter))
 		{
-			finalPath = GetFilePathFromIter(parentIter) + (string)ArchiveTreeStore.GetValue(iter, 1) + "\\";
+			finalPath = GetFilePathFromIter(parentIter) + (string)ArchiveTreeStore.GetValue(iter, 1);
+
 		}
 		else
 		{
-			finalPath = (string)ArchiveTreeStore.GetValue(iter, 1) + "\\";
+			finalPath = (string)ArchiveTreeStore.GetValue(iter, 1);
+		}
+
+		if (!IsFile(finalPath))
+		{
+			finalPath += "\\";
 		}
 
 		return finalPath;
