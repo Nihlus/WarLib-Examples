@@ -36,6 +36,7 @@ public partial class MainWindow: Gtk.Window
 
 	[UI] ColorSelectionDialog BackgroundColourChooserDialog;
 	[UI] AboutDialog MainAboutDialog;
+[UI] MessageDialog UnsupportedImageSizeDialog;
 
 	String currentFilePath;
 	BLP currentFile;
@@ -140,6 +141,20 @@ public partial class MainWindow: Gtk.Window
 			if (File.Exists(fsDialog.Filename))
 			{
 				currentFilePath = fsDialog.Filename;
+
+				// We're converting a normal image
+				Bitmap fileImageMap = new Bitmap(currentFilePath);
+				if (IsPowerOfTwo(fileImageMap.Width) && IsPowerOfTwo(fileImageMap.Height))
+				{								
+					currentFile = new BLP(fileImageMap, TextureCompressionType.Palettized);
+				}
+				else
+				{
+					fsDialog.Destroy ();
+					UnsupportedImageSizeDialog.Run ();
+					UnsupportedImageSizeDialog.Destroy ();
+				}
+
 				LoadFile(currentFilePath);
 			}
 		}
@@ -172,6 +187,11 @@ public partial class MainWindow: Gtk.Window
 		fsDialog.Destroy();
 	}
 
+	private bool IsPowerOfTwo(int x)
+	{
+		return (x & (x - 1)) == 0;
+	}
+
 	private void LoadFile(string filePath)
 	{
 		if (filePath.EndsWith(".blp"))
@@ -179,43 +199,39 @@ public partial class MainWindow: Gtk.Window
 			// We're loading a BLP file
 			currentFile = new BLP(File.ReadAllBytes(filePath));
 		}
-		else
+
+		if (currentFile != null)
 		{
-			// We're converting a normal image
-			Bitmap fileImageMap = new Bitmap(filePath);
+			// Load and display the BLP file at mip 0
+			MemoryStream imageStream = new MemoryStream();
+			Bitmap imageMap = currentFile.GetMipMap(0);
+			imageMap.Save(imageStream, ImageFormat.Png);
 
-			currentFile = new BLP(fileImageMap, TextureCompressionType.Palettized);
+			imageStream.Position = 0;
+
+			Gdk.Pixbuf imageBuffer = new Gdk.Pixbuf(imageStream);
+			CurrentImage.Pixbuf = imageBuffer;
+
+			// Reset Zoom
+			originalPixbuf = imageBuffer;
+			upscaledZoomLevels.Clear();
+			downscaledZoomLevels.Clear();
+			zoomLevel = 0;
+
+			// Load the header data into the visible info list
+			FileTypeLabel.LabelProp = currentFile.GetFileType();
+			FileVersionLabel.LabelProp = currentFile.GetVersion().ToString();
+			CompressionTypeLabel.LabelProp = currentFile.GetCompressionType().ToString();
+			AlphaBitDepthLabel.LabelProp = currentFile.GetAlphaBitDepth().ToString();
+			PixelFormatLabel.LabelProp = currentFile.GetPixelFormat().ToString();
+			MipCountLabel.LabelProp = currentFile.GetMipMapCount().ToString();
+
+			ResolutionStatusLabel.LabelProp = "Resolution: " + currentFile.GetResolution().ToString();
+			CompressionStatusLabel.LabelProp = currentFile.GetCompressionType().ToString();              
+			// Label Setup End //
+
+			this.Title = "BLP Viewer | " + currentFilePath;
 		}
-
-		// Load and display the BLP file at mip 0
-		MemoryStream imageStream = new MemoryStream();
-		Bitmap imageMap = currentFile.GetMipMap(0);
-		imageMap.Save(imageStream, ImageFormat.Png);
-
-		imageStream.Position = 0;
-
-		Gdk.Pixbuf imageBuffer = new Gdk.Pixbuf(imageStream);
-		CurrentImage.Pixbuf = imageBuffer;
-
-		// Reset Zoom
-		originalPixbuf = imageBuffer;
-		upscaledZoomLevels.Clear();
-		downscaledZoomLevels.Clear();
-		zoomLevel = 0;
-
-		// Load the header data into the visible info list
-		FileTypeLabel.LabelProp = currentFile.GetFileType();
-		FileVersionLabel.LabelProp = currentFile.GetVersion().ToString();
-		CompressionTypeLabel.LabelProp = currentFile.GetCompressionType().ToString();
-		AlphaBitDepthLabel.LabelProp = currentFile.GetAlphaBitDepth().ToString();
-		PixelFormatLabel.LabelProp = currentFile.GetPixelFormat().ToString();
-		MipCountLabel.LabelProp = currentFile.GetMipMapCount().ToString();
-
-		ResolutionStatusLabel.LabelProp = "Resolution: " + currentFile.GetResolution().ToString();
-		CompressionStatusLabel.LabelProp = currentFile.GetCompressionType().ToString();              
-		// Label Setup End //
-
-		this.Title = "BLP Viewer | " + currentFilePath;
 	}
 
 	protected void OnSaveFileButtonClicked(object sender, EventArgs e)
@@ -332,7 +348,7 @@ public partial class MainWindow: Gtk.Window
 				if (downscaledZoomLevels.ToArray().Length < Math.Abs(zoomLevel))
 				{
 					// Add a new downscaled level
-					downscaledZoomLevels.Add(CurrentImage.Pixbuf.ScaleSimple(originalPixbuf.Width / (Math.Abs(zoomLevel) + 1), 
+					downscaledZoomLevels.Add(originalPixbuf.ScaleSimple(originalPixbuf.Width / (Math.Abs(zoomLevel) + 1), 
 							originalPixbuf.Height / (Math.Abs(zoomLevel) + 1), 
 							InterpType.Hyper));
 				}
@@ -357,7 +373,7 @@ public partial class MainWindow: Gtk.Window
 				if (upscaledZoomLevels.ToArray().Length < zoomLevel)
 				{
 					// Add a new upscaled level
-					upscaledZoomLevels.Add(CurrentImage.Pixbuf.ScaleSimple(originalPixbuf.Width * (zoomLevel + 1), 
+					upscaledZoomLevels.Add(originalPixbuf.ScaleSimple(originalPixbuf.Width * (zoomLevel + 1), 
 							originalPixbuf.Height * (zoomLevel + 1), 
 							InterpType.Hyper));
 				}             
@@ -369,7 +385,7 @@ public partial class MainWindow: Gtk.Window
 				if (downscaledZoomLevels.ToArray().Length < Math.Abs(zoomLevel))
 				{
 					// Add a new downscaled level
-					downscaledZoomLevels.Add(CurrentImage.Pixbuf.ScaleSimple(originalPixbuf.Width / (Math.Abs(zoomLevel) + 1), 
+					downscaledZoomLevels.Add(originalPixbuf.ScaleSimple(originalPixbuf.Width / (Math.Abs(zoomLevel) + 1), 
 							originalPixbuf.Height / (Math.Abs(zoomLevel) + 1), 
 							InterpType.Hyper));
 				}
