@@ -1,12 +1,756 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.16.1 -->
 <interface>
+<<<<<<< HEAD
+	<requires lib="gtk+" version="3.10" />
+	<object class="GtkWindow" id="MainWindow">
+		<property name="can_focus">False</property>
+		<property name="title" translatable="yes">BLP Viewer</property>
+		<property name="window_position">center</property>
+		<property name="type_hint">dialog</property>
+		<child>
+			<object class="GtkBox" id="VerticalBox">
+				<property name="visible">True</property>
+				<property name="can_focus">False</property>
+				<property name="orientation">vertical</property>
+				<child>
+					<object class="GtkMenuBar" id="menubar1">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<child>
+							<object class="GtkMenuItem" id="menuitem1">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">_File</property>
+								<property name="use_underline">True</property>
+								<child type="submenu">
+									<object class="GtkMenu" id="menu1">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem2">
+												<property name="label">gtk-open</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem3">
+												<property name="label">gtk-save</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem4">
+												<property name="label">gtk-save-as</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkSeparatorMenuItem" id="separatormenuitem1">
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem5">
+												<property name="label">gtk-quit</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="GtkMenuItem" id="menuitem2">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">_Edit</property>
+								<property name="use_underline">True</property>
+								<child type="submenu">
+									<object class="GtkMenu" id="menu2">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem6">
+												<property name="label">gtk-cut</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem7">
+												<property name="label">gtk-copy</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem8">
+												<property name="label">gtk-paste</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkImageMenuItem" id="imagemenuitem9">
+												<property name="label">gtk-delete</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="GtkMenuItem" id="menuitem3">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">_View</property>
+								<property name="use_underline">True</property>
+							</object>
+						</child>
+						<child>
+							<object class="GtkMenuItem" id="menuitem4">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">_Help</property>
+								<property name="use_underline">True</property>
+								<child type="submenu">
+									<object class="GtkMenu" id="menu3">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<child>
+											<object class="GtkImageMenuItem" id="AboutMenuButton">
+												<property name="label">gtk-about</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="use_underline">True</property>
+												<property name="use_stock">True</property>
+											</object>
+										</child>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">0</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkToolbar" id="toolbar1">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<child>
+							<object class="GtkToolButton" id="NewFileButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">New...</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-new</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkToolButton" id="OpenFileButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Open</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-open</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkToolButton" id="SaveFileButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Save</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-save</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkToolButton" id="ZoomInButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Zoom in</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-zoom-in</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkToolButton" id="ZoomOutButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Zoom Out</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-zoom-out</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkToolButton" id="ChooseColourButton">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Select Background Colour</property>
+								<property name="use_underline">True</property>
+								<property name="stock_id">gtk-select-color</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="homogeneous">True</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">1</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkBox" id="HorizontalBox">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<child>
+							<object class="GtkFrame" id="frame1">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="margin_left">8</property>
+								<property name="margin_right">8</property>
+								<property name="label_xalign">0</property>
+								<child>
+									<object class="GtkAlignment" id="alignment1">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<child>
+											<object class="GtkListBox" id="InfoBox">
+												<property name="width_request">200</property>
+												<property name="height_request">300</property>
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="margin_left">4</property>
+												<property name="margin_right">4</property>
+												<property name="margin_top">4</property>
+												<property name="margin_bottom">4</property>
+												<property name="hexpand">False</property>
+												<property name="vexpand">True</property>
+												<property name="selection_mode">none</property>
+												<child>
+													<object class="GtkListBoxRow" id="FileTypeInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box2">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label2">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">File Type:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="FileTypeLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="no">BLP2</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListBoxRow" id="FileVersionInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box3">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label4">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">File Version:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="FileVersionLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="no">1</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListBoxRow" id="CompressionTypeInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box4">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label6">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">Compression Type:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="CompressionTypeLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">Palettized</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListBoxRow" id="AlphaBitDepthInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box5">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label8">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">Alpha Bit Depth:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="AlphaBitDepthLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="no">8</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListBoxRow" id="PixelFormatInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box6">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label10">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">Pixel Format:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="PixelFormatLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="no">ARGB8888</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child>
+													<object class="GtkListBoxRow" id="MipCountInfoRow">
+														<property name="width_request">100</property>
+														<property name="height_request">40</property>
+														<property name="visible">True</property>
+														<property name="can_focus">True</property>
+														<child>
+															<object class="GtkBox" id="box8">
+																<property name="visible">True</property>
+																<property name="can_focus">False</property>
+																<child>
+																	<object class="GtkLabel" id="label14">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="label" translatable="yes">Mip Count:</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="position">0</property>
+																	</packing>
+																</child>
+																<child>
+																	<object class="GtkLabel" id="MipCountLabel">
+																		<property name="visible">True</property>
+																		<property name="can_focus">False</property>
+																		<property name="halign">center</property>
+																		<property name="label" translatable="no">6</property>
+																	</object>
+																	<packing>
+																		<property name="expand">False</property>
+																		<property name="fill">True</property>
+																		<property name="pack_type">end</property>
+																		<property name="position">1</property>
+																	</packing>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+											</object>
+										</child>
+									</object>
+								</child>
+								<child type="label">
+									<object class="GtkLabel" id="label1">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<property name="label" translatable="yes">File Information</property>
+									</object>
+								</child>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">0</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkScrolledWindow" id="scrolledwindow1">
+								<property name="width_request">512</property>
+								<property name="height_request">400</property>
+								<property name="visible">True</property>
+								<property name="can_focus">True</property>
+								<property name="margin_right">8</property>
+								<property name="shadow_type">in</property>
+								<child>
+									<object class="GtkViewport" id="viewport1">
+										<property name="visible">True</property>
+										<property name="can_focus">False</property>
+										<child>
+											<object class="GtkImage" id="CurrentImage">
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="hexpand">True</property>
+												<property name="vexpand">True</property>
+												<property name="stock">gtk-missing-image</property>
+											</object>
+										</child>
+									</object>
+								</child>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">2</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkStatusbar" id="statusbar1">
+						<property name="visible">True</property>
+						<property name="can_focus">False</property>
+						<property name="margin_left">10</property>
+						<property name="margin_right">10</property>
+						<property name="margin_top">6</property>
+						<property name="margin_bottom">6</property>
+						<property name="spacing">2</property>
+						<child>
+							<object class="GtkLabel" id="CompressionStatusLabel">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Palettized</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkSeparator" id="separator1">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="orientation">vertical</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">2</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkLabel" id="ResolutionStatusLabel">
+								<property name="visible">True</property>
+								<property name="can_focus">False</property>
+								<property name="label" translatable="yes">Resolution: Unknown</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="position">3</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">3</property>
+					</packing>
+				</child>
+			</object>
+		</child>
+	</object>
+	<object class="GtkColorSelectionDialog" id="BackgroundColourChooserDialog">
+		<property name="can_focus">False</property>
+		<property name="type_hint">dialog</property>
+		<property name="transient_for">MainWindow</property>
+		<property name="attached_to">MainWindow</property>
+		<child internal-child="vbox">
+			<object class="GtkBox" id="colorselectiondialog-vbox1">
+				<property name="can_focus">False</property>
+				<property name="orientation">vertical</property>
+				<property name="spacing">2</property>
+				<child internal-child="action_area">
+					<object class="GtkButtonBox" id="colorselectiondialog-action_area1">
+						<property name="can_focus">False</property>
+						<property name="layout_style">end</property>
+						<child internal-child="cancel_button">
+							<object class="GtkButton" id="colorselectiondialog-cancel_button1">
+								<property name="label" translatable="yes">_Cancel</property>
+								<property name="can_focus">True</property>
+								<property name="can_default">True</property>
+								<property name="receives_default">True</property>
+								<property name="use_underline">True</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="pack_type">end</property>
+								<property name="position">0</property>
+							</packing>
+						</child>
+						<child internal-child="ok_button">
+							<object class="GtkButton" id="colorselectiondialog-ok_button1">
+								<property name="label" translatable="yes">_Select</property>
+								<property name="can_focus">True</property>
+								<property name="can_default">True</property>
+								<property name="receives_default">True</property>
+								<property name="use_underline">True</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="pack_type">end</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+						<child internal-child="help_button">
+							<object class="GtkButton" id="colorselectiondialog-help_button1">
+								<property name="label" translatable="yes">_Help</property>
+								<property name="can_focus">True</property>
+								<property name="can_default">True</property>
+								<property name="receives_default">True</property>
+								<property name="use_underline">True</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">True</property>
+								<property name="pack_type">end</property>
+								<property name="position">2</property>
+								<property name="secondary">True</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="pack_type">end</property>
+						<property name="position">0</property>
+					</packing>
+				</child>
+				<child internal-child="color_selection">
+					<object class="GtkColorSelection" id="colorselectiondialog-color_selection1">
+						<property name="can_focus">False</property>
+						<property name="orientation">vertical</property>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">1</property>
+					</packing>
+				</child>
+			</object>
+		</child>
+	</object>
+	<object class="GtkAboutDialog" id="MainAboutDialog">
+		<property name="can_focus">False</property>
+		<property name="type_hint">dialog</property>
+		<property name="transient_for">MainWindow</property>
+		<property name="attached_to">MainWindow</property>
+		<property name="program_name">BLP Viewer</property>
+		<property name="version">1.0</property>
+		<property name="copyright" translatable="no">Jarl Gullberg - 2015</property>
+		<property name="comments" translatable="yes">BLP Viewer is an example application written to showcase libwarcraft, a C# library designed to read and write the binary data formats used by Blizzard Entertainment in their games. 
+
+libwarcraft would not have been possible without the efforts of Ladislav Zezula (author of StormLib), Justin Olbrantz &amp; Jean-Francois Roy (in-depth description of the MPQ file format) as well as contributors to the WoWDev wiki, where most of the other file formats are documented in part or in whole.</property>
+		<property name="website">https://github.com/Nihlus/WarLib</property>
+		<property name="website_label" translatable="yes">libwarcraft on Github</property>
+		<property name="authors">Jarl Gullberg</property>
+		<property name="documenters">Jarl Gullberg</property>
+		<property name="logo_icon_name">image-x-generic</property>
+		<property name="license_type">lgpl-2-1</property>
+		<child internal-child="vbox">
+			<object class="GtkBox" id="aboutdialog-vbox1">
+				<property name="can_focus">False</property>
+				<property name="orientation">vertical</property>
+				<property name="spacing">2</property>
+				<child internal-child="action_area">
+					<object class="GtkButtonBox" id="aboutdialog-action_area1">
+						<property name="can_focus">False</property>
+						<property name="layout_style">end</property>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="pack_type">end</property>
+						<property name="position">0</property>
+					</packing>
+				</child>
+				<child>
+					<placeholder />
+				</child>
+			</object>
+		</child>
+	</object>
+</interface>
+=======
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkWindow" id="MainWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">BLP Viewer</property>
-    <property name="window_position">center</property>
-    <property name="type_hint">dialog</property>
     <child>
       <object class="GtkBox" id="VerticalBox">
         <property name="visible">True</property>
@@ -141,7 +885,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkImageMenuItem" id="AboutMenuButton">
+                      <object class="GtkImageMenuItem" id="imagemenuitem10">
                         <property name="label">gtk-about</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -706,46 +1450,6 @@
       </object>
     </child>
   </object>
-  <object class="GtkAboutDialog" id="MainAboutDialog">
-    <property name="can_focus">False</property>
-    <property name="type_hint">dialog</property>
-    <property name="transient_for">MainWindow</property>
-    <property name="attached_to">MainWindow</property>
-    <property name="program_name">BLP Viewer</property>
-    <property name="version">1.0</property>
-    <property name="copyright">Jarl Gullberg - 2015</property>
-    <property name="comments" translatable="yes">BLP Viewer is an example application written to showcase libwarcraft, a C# library designed to read and write the binary data formats used by Blizzard Entertainment in their games. 
-
-libwarcraft would not have been possible without the efforts of Ladislav Zezula (author of StormLib), Justin Olbrantz &amp; Jean-Francois Roy (in-depth description of the MPQ file format) as well as contributors to the WoWDev wiki, where most of the other file formats are documented in part or in whole.</property>
-    <property name="website">https://github.com/Nihlus/WarLib</property>
-    <property name="website_label" translatable="yes">libwarcraft on Github</property>
-    <property name="authors">Jarl Gullberg</property>
-    <property name="documenters">Jarl Gullberg</property>
-    <property name="logo_icon_name">image-x-generic</property>
-    <property name="license_type">lgpl-2-1</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="aboutdialog-vbox1">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="aboutdialog-action_area1">
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkMessageDialog" id="UnsupportedImageSizeDialog">
     <property name="can_focus">False</property>
     <property name="modal">True</property>
@@ -785,3 +1489,4 @@ libwarcraft would not have been possible without the efforts of Ladislav Zezula 
     </child>
   </object>
 </interface>
+>>>>>>> f5aa1ac7cfb773edc3f5bc8562e67644713c2556

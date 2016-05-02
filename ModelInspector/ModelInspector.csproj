@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{BD058763-D407-47D0-89EC-8B743D13FA68}</ProjectGuid>
+    <ProjectGuid>{9C2DFC30-2EB6-4835-8F6B-998D39894986}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MPQExplorer</RootNamespace>
-    <AssemblyName>MPQExplorer</AssemblyName>
+    <RootNamespace>ModelInspector</RootNamespace>
+    <AssemblyName>ModelInspector</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -54,7 +54,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FileTreeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="interfaces\MainWindow.glade" />
@@ -64,6 +63,10 @@
     <ProjectReference Include="..\..\libwarcraft\libwarcraft\libwarcraft.csproj">
       <Project>{DA06A44E-A67B-46C7-B07D-E90AEBED0502}</Project>
       <Name>libwarcraft</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ColladaSharp\ColladaSharp.csproj">
+      <Project>{F6207735-E7C7-427A-BE34-F60B5F64F836}</Project>
+      <Name>ColladaSharp</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

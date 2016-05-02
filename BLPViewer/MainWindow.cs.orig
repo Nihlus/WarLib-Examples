@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using Gtk;
 using UI = Gtk.Builder.ObjectAttribute;
-using Warcraft.BLP;
+using WarLib.BLP;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -35,9 +35,11 @@ public partial class MainWindow: Gtk.Window
 	[UI] ImageMenuItem AboutMenuButton;
 
 	[UI] ColorSelectionDialog BackgroundColourChooserDialog;
+<<<<<<< HEAD
 	[UI] AboutDialog MainAboutDialog;
-
+=======
 	[UI] MessageDialog UnsupportedImageSizeDialog;
+>>>>>>> f5aa1ac7cfb773edc3f5bc8562e67644713c2556
 
 	String currentFilePath;
 	BLP currentFile;
@@ -151,9 +153,9 @@ public partial class MainWindow: Gtk.Window
 				}
 				else
 				{
-					fsDialog.Destroy();
-					UnsupportedImageSizeDialog.Run();
-					UnsupportedImageSizeDialog.Destroy();
+					fsDialog.Destroy ();
+					UnsupportedImageSizeDialog.Run ();
+					UnsupportedImageSizeDialog.Destroy ();
 				}
 
 				LoadFile(currentFilePath);
@@ -180,7 +182,7 @@ public partial class MainWindow: Gtk.Window
 		{			
 			if (File.Exists(fsDialog.Filename))
 			{
-				currentFilePath = fsDialog.Filename;
+				currentFilePath = fsDialog.Filename;					
 				LoadFile(currentFilePath);
 			}
 		}
@@ -205,7 +207,7 @@ public partial class MainWindow: Gtk.Window
 		{
 			// Load and display the BLP file at mip 0
 			MemoryStream imageStream = new MemoryStream();
-			Bitmap imageMap = currentFile.GetMipMap(1);
+			Bitmap imageMap = currentFile.GetMipMap(0);
 			imageMap.Save(imageStream, ImageFormat.Png);
 
 			imageStream.Position = 0;
@@ -337,7 +339,7 @@ public partial class MainWindow: Gtk.Window
 				if (upscaledZoomLevels.ToArray().Length < zoomLevel)
 				{
 					// Add a new upscaled level
-					upscaledZoomLevels.Add(CurrentImage.Pixbuf.ScaleSimple(originalPixbuf.Width * (zoomLevel + 1), 
+					upscaledZoomLevels.Add(originalPixbuf.ScaleSimple(originalPixbuf.Width * (zoomLevel + 1), 
 							originalPixbuf.Height * (zoomLevel + 1), 
 							InterpType.Hyper));
 				}             

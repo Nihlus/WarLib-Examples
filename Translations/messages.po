@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-01-07 17:31:49+0100\n"
+"PO-Revision-Date: 2016-01-07 17:31:49+0100\n"
+"Last-Translator: Jarl Gullberg <jarl.gullberg@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: MonoDevelop Gettext addin\n"
+
+#: ../BLPConverter/Mono.Options/Options.cs:75
+msgid "OptionName"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "BLP Viewer"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+#: ../MPQExplorer/interfaces/MainWindow.glade:0
+msgid "_File"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+#: ../MPQExplorer/interfaces/MainWindow.glade:0
+msgid "_Edit"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+#: ../MPQExplorer/interfaces/MainWindow.glade:0
+msgid "_View"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+#: ../MPQExplorer/interfaces/MainWindow.glade:0
+msgid "_Help"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "New..."
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Open"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Save"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Zoom in"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Zoom Out"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Select Background Colour"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "File Type:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "File Version:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Compression Type:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Palettized"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Alpha Bit Depth:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Pixel Format:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Mip Count:"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "File Information"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "Resolution: Unknown"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "_Cancel"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid "_Select"
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:0
+msgid ""
+"BLP Viewer is an example application written to showcase libwarcraft, a C# "
+"library designed to read and write the binary data formats used by Blizzard "
+"Entertainment in their games. \n"
+"\n"
+"libwarcraft would not have been possible without the efforts of Ladislav "
+"Zezula (author of StormLib), Justin Olbrantz & Jean-Francois Roy (in-depth "
+"description of the MPQ file format) as well as contributors to the WoWDev wiki, "
+"where most of the other file formats are documented in part or in whole."
+msgstr ""
+
+#: ../BLPViewer/interfaces/MainWindow.glade:1
+msgid "libwarcraft on Github"
+msgstr ""
+
+#: ../MPQExplorer/interfaces/MainWindow.glade:0
+msgid "Archive"
+msgstr ""
+

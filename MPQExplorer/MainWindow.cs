@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Gtk;
 using UI = Gtk.Builder.ObjectAttribute;
 using System.IO;
-using WarLib.MPQ;
+using Warcraft.MPQ;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -123,6 +123,8 @@ public partial class MainWindow: Gtk.Window
 			{
 				EnumerateDirectories(folderPath + folder);
 			}
+
+			folderDictionary.Remove(folderPath);
 		}
 	}
 
@@ -133,16 +135,21 @@ public partial class MainWindow: Gtk.Window
 			                             this, 
 			                             FileChooserAction.Save, 
 			                             "Cancel", ResponseType.Cancel,
-			                             "Save", ResponseType.Accept);
+			                             "Save", ResponseType.Accept);			                             	
 
-		fsDialog.SetFilename(System.IO.Path.GetFileName(currentPath));
-
+		string filename = StripPath(currentPath);
+		fsDialog.CurrentName = filename;
 		if (fsDialog.Run() == (int)ResponseType.Accept)
 		{
 			File.WriteAllBytes(fsDialog.Filename, currentMPQ.ExtractFile(currentPath));
 		}
 
 		fsDialog.Destroy();
+	}
+
+	private string StripPath(string InPath)
+	{
+		return InPath.Substring(InPath.LastIndexOf('\\')).Replace("\\", "");
 	}
 
 	protected void OnItemOpen(object sender, EventArgs e)
@@ -309,7 +316,7 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	private bool IsFile(string name)
-	{
+	{		
 		string[] parts = name.Split('.');
 		return parts.Length > 1;
 	}

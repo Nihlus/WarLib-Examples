@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using Mono.Options;
-using WarLib.BLP;
+using Warcraft.BLP;
 using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,11 +19,11 @@ namespace BLPConverter
 			OptionSet options = new OptionSet()
 			{
 				{ "if=|file=", "The path to the BLP to convert.", v =>
-                    {
-                        filePath = v.ToString();
-                    }
-                },
-                { "f=|output-format=", "The format of the output image.", v =>
+					{
+						filePath = v.ToString();
+					}
+				},
+				{ "f=|output-format=", "The format of the output image.", v =>
                     {
                         fileType = v.ToString();
                     } 

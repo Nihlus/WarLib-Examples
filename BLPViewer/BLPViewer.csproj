@@ -61,9 +61,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\WarLib\WarLib\WarLib.csproj">
+    <ProjectReference Include="..\..\libwarcraft\libwarcraft\libwarcraft.csproj">
       <Project>{DA06A44E-A67B-46C7-B07D-E90AEBED0502}</Project>
-      <Name>WarLib</Name>
+      <Name>libwarcraft</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

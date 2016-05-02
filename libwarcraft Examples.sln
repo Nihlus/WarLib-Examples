@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPConverter", "BLPConverter\BLPConverter.csproj", "{3295958B-ED25-4B40-9A60-7BF69A2C3A14}"
@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLPViewer", "BLPViewer\BLPV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPQExplorer", "MPQExplorer\MPQExplorer.csproj", "{BD058763-D407-47D0-89EC-8B743D13FA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarLib", "..\WarLib\WarLib\WarLib.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libwarcraft", "..\libwarcraft\libwarcraft\libwarcraft.csproj", "{DA06A44E-A67B-46C7-B07D-E90AEBED0502}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Translations", "Translations\Translations.mdproj", "{1953DE8E-9EE1-4071-AD30-02F94994DB1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColladaSharp", "..\ColladaSharp\ColladaSharp.csproj", "{F6207735-E7C7-427A-BE34-F60B5F64F836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelInspector", "ModelInspector\ModelInspector.csproj", "{9C2DFC30-2EB6-4835-8F6B-998D39894986}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Debug|x86.Build.0 = Debug|Any CPU
-		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Release|x86.ActiveCfg = Release|Any CPU
-		{1953DE8E-9EE1-4071-AD30-02F94994DB1C}.Release|x86.Build.0 = Release|Any CPU
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.ActiveCfg = Debug|x86
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Debug|x86.Build.0 = Debug|x86
 		{3295958B-ED25-4B40-9A60-7BF69A2C3A14}.Release|x86.ActiveCfg = Release|x86
@@ -29,6 +27,10 @@ Global
 		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Debug|x86.Build.0 = Debug|x86
 		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Release|x86.ActiveCfg = Release|x86
 		{8AC8D42D-0730-4747-AC4E-372D0BE2EA96}.Release|x86.Build.0 = Release|x86
+		{9C2DFC30-2EB6-4835-8F6B-998D39894986}.Debug|x86.ActiveCfg = Debug|x86
+		{9C2DFC30-2EB6-4835-8F6B-998D39894986}.Debug|x86.Build.0 = Debug|x86
+		{9C2DFC30-2EB6-4835-8F6B-998D39894986}.Release|x86.ActiveCfg = Release|x86
+		{9C2DFC30-2EB6-4835-8F6B-998D39894986}.Release|x86.Build.0 = Release|x86
 		{BD058763-D407-47D0-89EC-8B743D13FA68}.Debug|x86.ActiveCfg = Debug|x86
 		{BD058763-D407-47D0-89EC-8B743D13FA68}.Debug|x86.Build.0 = Debug|x86
 		{BD058763-D407-47D0-89EC-8B743D13FA68}.Release|x86.ActiveCfg = Release|x86
@@ -37,5 +39,9 @@ Global
 		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Debug|x86.Build.0 = Debug|Any CPU
 		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Release|x86.ActiveCfg = Release|Any CPU
 		{DA06A44E-A67B-46C7-B07D-E90AEBED0502}.Release|x86.Build.0 = Release|Any CPU
+		{F6207735-E7C7-427A-BE34-F60B5F64F836}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6207735-E7C7-427A-BE34-F60B5F64F836}.Debug|x86.Build.0 = Debug|Any CPU
+		{F6207735-E7C7-427A-BE34-F60B5F64F836}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6207735-E7C7-427A-BE34-F60B5F64F836}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
